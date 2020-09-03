@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Airtable from 'airtable';
 
+import Goal from './components/Goal';
+
 const base = new Airtable({ apiKey: 'keyTLS0P8OB9AiTlW' }).base(
   'appEDJXKhlklhtwkd'
 );
@@ -27,6 +29,15 @@ function App() {
   return (
     <>
       <h1>My Goals</h1>
+      {goals.map(goal => (
+        <Goal
+          key={goal.id}
+          goal={goal}
+          updates={updates.filter(
+            update => update.fields.goalid[0] === goal.id
+          )}
+        />
+      ))}
     </>
   );
 }
