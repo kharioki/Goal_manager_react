@@ -1,5 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import Airtable from 'airtable';
+import styled from 'styled-components';
+
+import { GlobalStyle } from './styles/Global.style';
 
 import Goal from './components/Goal';
 
@@ -28,6 +31,7 @@ function App() {
 
   return (
     <>
+      <GlobalStyle />
       <h1>My Goals</h1>
       {goals.map(goal => (
         <Goal
