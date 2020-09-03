@@ -10,6 +10,12 @@ const base = new Airtable({ apiKey: 'keyTLS0P8OB9AiTlW' }).base(
   'appEDJXKhlklhtwkd'
 );
 
+const StyledH1 = styled.h1`
+  text-align: center;
+  font-size: 4rem;
+  margin: 1rem 0;
+`;
+
 function App() {
   const [goals, setGoals] = useState([]);
   const [updates, setUpdates] = useState([]);
@@ -32,7 +38,7 @@ function App() {
   return (
     <>
       <GlobalStyle />
-      <h1>My Goals</h1>
+      <StyledH1>My Goals</StyledH1>
       {goals.map(goal => (
         <Goal
           key={goal.id}

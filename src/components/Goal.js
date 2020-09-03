@@ -1,11 +1,15 @@
 import React from 'react';
+import StyledGoal from '../styles/StyledGoal';
+import StyledCheckBox from '../styles/StyledCheckBox';
 
 const Goal = ({ goal, updates }) => {
   return (
-    <div>
-      <label>
+    <StyledGoal>
+      <StyledCheckBox>
+        {' '}
         <input type="checkbox" defaultChecked={goal.fields.complete} disabled />
-      </label>
+        <span />
+      </StyledCheckBox>
       <h2>{goal.fields.title}</h2>
       <div>
         <h3>DETAILS</h3>
@@ -15,7 +19,7 @@ const Goal = ({ goal, updates }) => {
           <p key={index}>{update.fields.update}</p>
         ))}
       </div>
-    </div>
+    </StyledGoal>
   );
 };
 
